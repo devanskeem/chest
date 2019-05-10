@@ -1,33 +1,227 @@
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
   display: flex;
+  background: #E4E2E5;
+  justify-content: space-between;
+}
+.app-content{
+  width: 100%;
+}
+
+.nw-wrapper{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+
+.nw-head{
+  box-shadow: 1px 1px 4px 3px rgba(201, 201, 201, .35);
+  border-radius: 5px 5px 0px 0px;
+  background: white;
+  display: flex;
+  justify-content: center;
+}
+
+.nw-head > h1{
+  color: #253FAD;
+  font-size: 50px;
+  margin: 5px;
+}
+
+.nw-container{
+  box-shadow: 1px 1px 20px 1px rgba(177, 177, 177, 0.721);
+  border-radius: 5px;
+  height: 450px;
+  width: 1000px;
+  background: #F0F1F5;
+
+}
+.nw-value{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 107px;
+}
+.nw-value > h1{
+  margin: 5px ;
+  font-size: 70px;
+  color: rgb(45, 133, 85);
+}
+.sidebar{
+  height: 100vh;
+  width: 125px;
+  background: white;
+  box-shadow: 1px 1px 15px 3px rgba(177, 177, 177,.25);
+  display: flex;
+  
+  align-items: flex-start;
   flex-direction: column;
+  
+}
+.logo{
+  font-family: 'Comfortaa';
+  height: 125px;
+  width: 125px;
+  background: #253FAD;
+  box-shadow: -5px 5px 16px 3px rgba(82, 82, 82, 0.25);
+  display: flex;
+  align-items: center;
+  flex-direction: column
+
+}
+
+.logo > img{
+  margin: 0;
+  height: 80px;
+  width: 80px;
+}
+
+.logo > h1{
+  color: white;
+  font-size: 23px;
+  font-weight: 900;
+  margin: 12px 0 0 0;
+}
+
+.add{
+  height: 150px;
+  width: 150px;
+  background: rgb(31, 167, 177);
+  color: #253fad;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+
+  
+}
+
+.nw-content{
+  display:flex;
+  height: 57%;
+  justify-content: space-evenly;
+  align-items:  flex-end;
+
+}
+.table-wrapper{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.table-card{
+  margin-bottom: -12px;
+  box-shadow: 1px 1px 5px 2px rgba(201, 201, 201, .25);
+  border-radius: 3px;
+  height: 270px;;
+  width: 98%;
+  background: rgb(249, 249, 249);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+
+}
+.table-card > h3{
+  margin: 5px;
+  font-size: 25px;
+}
+.tbl-block{
+  margin: 200px;
+}
+.edit-btn{
+  box-shadow: 1px 1px 0px .4px rgba(1, 1, 1, 0.386);
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 0px 1px 4px 2px;
+  border: none;
+  background: lightgrey;
+}
+.edit-btn > p {
+  margin: 0;
 }
 
-.App-link {
-  color: #61dafb;
+
+th, td{
+  margin: 0px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.delete-btn{
+  box-shadow: .5px .5px 0px .25px rgba(133, 68, 68, 0.488);
+  margin-left: 5px;
+  display: flex;
+  justify-content: center;
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 98, 98, 0.256);
+  color: rgba(225, 66, 66, 0.742);
+  font-weight: 900;
 }
+
+.nw-table{
+  display: block;
+  table-layout: auto;
+  overflow: auto;
+  width: 100%;
+  height: 300px;
+  border-collapse: collapse;
+}
+.nw-table td{
+  border: 1px solid rgb(177, 177, 177);
+}
+
+.nw-table th{
+  border: 1px solid rgb(177, 177, 177);
+  border-bottom: 2px solid rgb(177, 177, 177);
+  
+  font-weight: bold;
+}
+
+.nw-table input{
+  width: 90px;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+#btn-block{
+  border: none;
+  display: flex;
+}
+
+
+
+
+.table-btns{
+  display: flex;
+  align-items: center;
+  border: none;
+  margin: 0px;
+}
+
+.add-btn{
+  color: #4f5efc;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-bottom: 4px;
+  background: #a7b7ff;
+  height: 32px;
+  width: 96%;
+  border: none;
+  box-shadow: .3px .3px 0px 1px rgb(157, 172, 255);
+}
+
+/* #table-div{
+  width: 15vw;
+} */
+
+button:focus {outline:0;}
+button:active {box-shadow: none; transform: translate(.65px, .65px)}
