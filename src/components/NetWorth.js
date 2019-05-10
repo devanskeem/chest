@@ -30,9 +30,9 @@ export default class NetWorth extends Component{
 
     }
     getNetWorth(){
-        let assetsTot = this.state.assets.reduce((total, element) => total += element.value, 0)
+        let assetsTot = this.state.assets.reduce((total, element) => total += parseInt(element.value), 0)
         
-        let liabTot = this.state.liabilities.reduce((total, element) => total += element.value, 0)
+        let liabTot = this.state.liabilities.reduce((total, element) => total += parseInt(element.value), 0)
 
         return assetsTot + liabTot;
     }
@@ -43,6 +43,9 @@ export default class NetWorth extends Component{
                 assets: res.data
             })
         })
+        this.setState({
+            netWorth: this.getNetWorth()
+        })
     }
     updateLiability = (id, name, type, value) => {
         axios.put(`/api/liabilities/${id}?name=${name}&type=${type}&value=${value}`).then((res) => {
@@ -50,8 +53,43 @@ export default class NetWorth extends Component{
                 liabilities: res.data
             })
         })
+        this.setState({
+            netWorth: this.getNetWorth()
+        })
     }
     
+    addAsset = (name, type, value) => {
+        axios.post(`/api/assets/?name=${name}&type=${type}&value=${value}`).then((res) => {
+            this.setState({
+                assets: res.data
+            })
+        })
+    }
+    addLiability = (name, type, value) => {
+        axios.post(`/api/liabilities/?name=${name}&type=${type}&value=${value}`).then((res) => {
+            this.setState({
+                liabilities: res.data
+            })
+        })
+    }
+
+    deleteAsset = (id) => {
+        axios.delete(`/api/assets/${id}`).then((res) => {
+            this.setState({
+                assets: res.data
+            })
+        })
+    }
+
+    deleteLiability = (id) => {
+        axios.delete(`/api/liabilities/${id}`).then((res) => {
+            this.setState({
+                liabilities: res.data
+            })
+        })
+    }
+
+
     toggleEdit = () => {
       this.setState({
           edit: !this.state.edit
@@ -72,8 +110,8 @@ export default class NetWorth extends Component{
                     </div>
                     
                     <div className="nw-content">
-                        <Table title="Assets" assets={this.state.assets} updateAsset={this.updateAsset}/>
-                        <Table title="Liabilities" assets={this.state.liabilities} updateLiability={this.updateLiability} />
+                        <Table title="Assets" assets={this.state.assets} updateAsset={this.updateAsset} deleteAsset={this.deleteAsset} addAsset={this.addAsset}/>
+                        <Table title="Liabilities" assets={this.state.liabilities} updateLiability={this.updateLiability} deleteLiability={this.deleteLiability} addLiability={this.addLiability}/>
                     </div>
                 </div>
             </section>

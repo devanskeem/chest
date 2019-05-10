@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import TableRow from './TableRow'
 
 export default class Table extends Component {
+    addHandler = (name, type, value) => {
+        let {title, addAsset, addLiability} = this.props
+        if (title === "Assets"){
+            addAsset(name, type, value);
+        }
+        else if (title === "Liabilities"){
+            addLiability(name, type, value);        
+        }
+    }
     render() {
         //destructuring props
-        let { title, assets, updateAsset, updateLiability } = this.props;
+        let { title, assets, updateAsset, updateLiability, addAsset, addLiability, deleteAsset, deleteLiability } = this.props;
         //creates a table of assets and buttons
         let assetList = assets.map((element, index) => {
             return (
-                <TableRow updateAsset={updateAsset} updateLiability={updateLiability} key={index} assets={element} />
+                <TableRow title={title} updateAsset={updateAsset} updateLiability={updateLiability} addAsset={addAsset} addLiability={addLiability} deleteAsset={deleteAsset} deleteLiability={deleteLiability} key={index} asset={element} />
             )
         })
 
@@ -34,7 +43,7 @@ export default class Table extends Component {
 
                     </table>
 
-                    <button className="add-btn">ADD NEW</button>
+                    <button className="add-btn" onClick={() => this.addHandler('test', 'test', 25)}>ADD NEW</button>
                 </div>
             </div>
 
