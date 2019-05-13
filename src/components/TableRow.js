@@ -44,6 +44,7 @@ export default class TableRow extends Component {
             updateAsset(id, name, type, value);
         }
         else if (title === "Liabilities"){
+            if (value > 0) updateLiability(name, type, -value);
             updateLiability(id, name, type, value);
         }
         this.toggleEdit();

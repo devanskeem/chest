@@ -1,21 +1,4 @@
-const assets = [
-    { name: 'House', value: 200000, type: 'Property', id: 1 },
-    { name: 'Mutual Fund', value: 50000, type: 'Stocks', id: 2 },
-    { name: "Cash", value: 2000, type: 'Liquid', id: 3 },
-    { name: 'Gold', value: 2500, type: 'Other', id: 4 },
-    { name: 'House', value: 200000, type: 'Property', id: 5 },
-    { name: 'Mutual Fund', value: 50000, type: 'Stocks', id: 6 },
-    { name: "Cash", value: 2000, type: 'Liquid', id: 7 },
-    { name: 'Gold', value: 2500, type: 'Other', id: 8 },
-    { name: 'House', value: 200000, type: 'Property', id: 9 },
-    { name: 'Mutual Fund', value: 50000, type: 'Stocks', id: 10 },
-    { name: "Cash", value: 2000, type: 'Liquid', id: 11 },
-    { name: 'Gold', value: 2500, type: 'Other', id: 12 },
-    { name: 'House', value: 200000, type: 'Property', id: 13 },
-    { name: 'Mutual Fund', value: 50000, type: 'Stocks', id: 14 },
-    { name: "Cash", value: 2000, type: 'Liquid', id: 15 },
-    { name: 'Gold', value: 2500, type: 'Other', id: 16 }
-]
+const assets = []
 let id = assets.length + 1;
 module.exports = {
     getAllAssets: (req, res) => {
@@ -49,9 +32,9 @@ module.exports = {
         let { type } = req.query;
         let { value } = req.query;
         assets.push({
-            name: name ? name : "Name",
-            type: type ? type : "Type",
-            value: value ? +value : "0",
+            name,
+            type,
+            value: value ? +value : 0,
             id
         })
         id++

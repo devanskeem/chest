@@ -1,16 +1,6 @@
 
-const liabilities = [
-    {name: 'Car', value: -14000, type: 'Property', id: 1},
-    {name: 'Beach House', value: -150000, type: 'Property', id: 2},
-    {name: 'AMEX', value: -2200, type: 'Credit Card', id: 3},
-    {name: 'Car', value: -14000, type: 'Property', id: 4},
-    {name: 'Beach House', value: -150000, type: 'Property', id: 5},
-    {name: 'AMEX', value: -2200, type: 'Credit Card', id: 6},
-    {name: 'Car', value: -14000, type: 'Property', id: 7},
-    {name: 'Beach House', value: -150000, type: 'Property', id: 8},
-    {name: 'AMEX', value: -2200, type: 'Credit Card', id: 9}
-]
-
+const liabilities = []
+let id = liabilities.length + 1;
 module.exports = {
     getAllLiabilities: (req, res) => {
         res.status(200).send(liabilities)
@@ -43,9 +33,9 @@ module.exports = {
         let { type } = req.query;
         let { value } = req.query;
         liabilities.push({
-            name: name ? name : "Name",
-            type: type ? type : "Type",
-            value: value ? +value : "0",
+            name,
+            type,
+            value: value ? +value : 0,
             id
         })
         id++
