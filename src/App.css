@@ -31,7 +31,7 @@
 
 .nw-wrapper{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 
 
@@ -234,10 +234,10 @@ th, td{
   font-weight: bold;
   font-size: 18px;
   border-radius: 5px;
-  margin: 4px;
+  margin: 4px 4px 7px 4px;
   background: #2e70db;
   height: 32px;
-  width: 96%;
+  width: 97%;
   border: none;
   /* box-shadow: .3px .3px 0px 1px rgb(157, 172, 255); */
 }

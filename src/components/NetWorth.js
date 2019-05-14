@@ -79,7 +79,7 @@ export default class NetWorth extends Component{
     }
     
     addAsset = (name, type, value) => {
-        axios.post(`/api/assets/?name=${name}&type=${type}&value=${value}`).then((res) => {
+        axios.post(`/api/assets/`, {"name": name, "type":type, "value": value}).then((res) => {
             this.setState({
                 assets: res.data
             })

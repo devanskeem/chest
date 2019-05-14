@@ -32,7 +32,7 @@ export default class Table extends Component {
 
     render() {
         //destructuring props
-        let { title, assets, updateAsset, updateLiability, addAsset, addLiability, deleteAsset, deleteLiability, total } = this.props;
+        let { getNW, title, assets, updateAsset, updateLiability, addAsset, addLiability, deleteAsset, deleteLiability, total } = this.props;
         //creates a table of assets and buttons
         let assetList = assets.map((element, index) => {
             return (

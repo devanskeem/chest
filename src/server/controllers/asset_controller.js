@@ -28,9 +28,9 @@ module.exports = {
     },
 
     addAsset: (req, res) => {
-        let { name } = req.query;
-        let { type } = req.query;
-        let { value } = req.query;
+        let { name } = req.body;
+        let { type } = req.body;
+        let { value } = req.body;
         assets.push({
             name,
             type,
